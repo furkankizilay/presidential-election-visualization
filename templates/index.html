@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Histogram</title>
+    <!-- Import Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Flask Plotly Example</h1>
+    {{ plot1_html | safe }}
+    <h1>Pie Plotly Example</h1>
+    {{ plot2_html | safe }}
+</body>
+<h1>Word Cloud</h1>
+<body>
+    <div id="word-cloud"></div>
+    <script>
+        var fig = JSON.parse('{{ fig_json | safe }}');
+        Plotly.newPlot('word-cloud', fig.data, fig.layout);
+    </script>
+</body>
+</html>
